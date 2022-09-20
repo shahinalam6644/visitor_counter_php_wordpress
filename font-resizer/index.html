@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - JS - Increase/decrease” font size</title>   <link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<div class="container">
+  <br><br>
+  <div class="row">
+    <div class="col-lg-12">
+      <div id="chcp_font_size" class="input-group">
+        <span class="input-group-btn">
+          <button id="btn-decrease" class="btn btn-default" type="button"><i class="fa fa-font" aria-hidden="true"></i>-</button>
+          <button id="btn-orig" class="btn btn-default" type="button"><i class="fa fa-font" aria-hidden="true"></i></button>
+          <button id="btn-increase" class="btn btn-default" type="button"><i class="fa fa-font" aria-hidden="true"></i>+</button>
+        </span>
+      </div><!-- /input-group -->
+    </div><!-- /.col-lg-6 -->
+  </div><!-- /.row -->
+  <br>
+  <div class="row">
+  
+   <div class="col-lg-12">
+    <p style="font-size : 30px">This text is initially 30px</p>
+    <p style="font-size : 20px">This text is initially 20px</p>
+     <p style="font-size : 10px">This text is initially 10px</p>
+  </div>  
+</div>
+  
+</div>
+<!-- partial -->
+  <script src='https://lfmeab.org/wp-includes/js/jquery/jquery.min.js'></script> </script>
+  <script>
+  var jQueryaffectedElements = jQuery("p, h1, h2, h3, h4, h5, h6"); // Can be extended, ex. $("div, p, span.someClass")
+
+// Storing the original size in a data attribute so size can be reset
+jQueryaffectedElements.each( function(){
+  var jQuerythis = jQuery(this);
+  jQuerythis.data("orig-size",jQuerythis.css("font-size") );
+});
+
+jQuery("#btn-increase").click(function(){
+  changeFontSize(1);
+})
+
+jQuery("#btn-decrease").click(function(){
+  changeFontSize(-1);
+})
+
+jQuery("#btn-orig").click(function(){
+  jQueryaffectedElements.each( function(){
+        var jQuerythis = jQuery(this);
+        jQuerythis.css( "font-size" , jQuerythis.data("orig-size") );
+   });
+})
+
+function changeFontSize(direction){
+    jQueryaffectedElements.each( function(){
+        var jQuerythis = jQuery(this);
+        jQuerythis.css( "font-size" , parseInt(jQuerythis.css("font-size"))+direction );
+    });
+}
+  </script>
+
+</body>
+</html>
+
+
+
+
+
+
+<div class="font_resizer" style="position: fixed;z-index: 999;top: 300px;right: 0px;bottom: 0px;">
+<button id="btn-decrease" class="btn btn-default" type="button" style="width: 36px;height: 36px;border-radius: 18px;background-color: antiquewhite;"><i class="fa fa-font" aria-hidden="true"></i>-</button><br>
+<button id="btn-orig" class="btn btn-default" type="button" style="width: 36px;height: 36px;border-radius: 18px;background-color: antiquewhite;"><i class="fa fa-font" aria-hidden="true"></i></button><br>
+<button id="btn-increase" class="btn btn-default" type="button" style="width: 36px;height: 36px;border-radius: 18px;background-color: antiquewhite;"><i class="fa fa-font" aria-hidden="true"></i>+</button>
+</div>
+
+
+
+<script>
+  var jQueryaffectedElements = jQuery("p, h1, h2, h3, h4, h5, h6"); // Can be extended, ex. $("div, p, span.someClass")
+
+// Storing the original size in a data attribute so size can be reset
+jQueryaffectedElements.each( function(){
+  var jQuerythis = jQuery(this);
+  jQuerythis.data("orig-size",jQuerythis.css("font-size") );
+});
+
+jQuery("#btn-increase").click(function(){
+  changeFontSize(1);
+})
+
+jQuery("#btn-decrease").click(function(){
+  changeFontSize(-1);
+})
+
+jQuery("#btn-orig").click(function(){
+  jQueryaffectedElements.each( function(){
+        var jQuerythis = jQuery(this);
+        jQuerythis.css( "font-size" , jQuerythis.data("orig-size") );
+   });
+})
+
+function changeFontSize(direction){
+    jQueryaffectedElements.each( function(){
+        var jQuerythis = jQuery(this);
+        jQuerythis.css( "font-size" , parseInt(jQuerythis.css("font-size"))+direction );
+    });
+}
+  </script>

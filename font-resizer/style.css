@@ -1,0 +1,29 @@
+.col-lg-12{background-color:#eee; padding:10px;}
+button:focus{
+  outline:none!important;
+}
+#chcp_font_size button {
+  border: none;
+  background-color:transparent;
+  /*background-color:#eee;*/
+  text-shadow: none;
+  /*+box-shadow: none;*/
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  padding:0px 5px;
+  margin:0px;
+  
+}
+#chcp_font_size button:hover{
+  color:#FF5100;
+}
+#btn-decrease {
+  font-size:12px;
+}
+#btn-orig {
+  font-size:14px;
+}
+#btn-increase {
+  font-size:12px;
+}
